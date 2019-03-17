@@ -6,7 +6,7 @@ public interface OwnCollectoin<E> extends Iterable<E> {
 
   boolean add(E e);
 
-  boolean remove(Object o);
+  E remove(int index);
 
   int size();
 
