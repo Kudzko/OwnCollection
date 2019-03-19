@@ -2,7 +2,7 @@ package by.epam.javawebtraining.kudzko.task02.interfaces;
 
 import java.util.*;
 
-public interface OwnCollectoin<E> extends Iterable<E> {
+public interface OwnCollection<E> extends Iterable<E> {
 
   boolean add(E e);
 

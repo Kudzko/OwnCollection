@@ -1,8 +1,6 @@
 package by.epam.javawebtraining.kudzko.task02.interfaces;
 
-import java.util.NoSuchElementException;
-
-public interface OwnQueue<E> extends OwnCollectoin<E> {
+public interface OwnQueue<E> extends OwnCollection<E> {
 
     boolean add(E e);
 

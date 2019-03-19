@@ -2,12 +2,12 @@ package by.epam.javawebtraining.kudzko.task02.classes;
 
 import by.epam.javawebtraining.kudzko.task02.classes.exceptions.IllegalArgumentException;
 import by.epam.javawebtraining.kudzko.task02.classes.exceptions.IndexOutOfBoundException;
-import by.epam.javawebtraining.kudzko.task02.interfaces.OwnCollectoin;
+import by.epam.javawebtraining.kudzko.task02.interfaces.OwnCollection;
 
 import java.util.Arrays;
 import java.util.Iterator;
 
-public class OwnAbstractArrayList<E> implements OwnCollectoin<E> {
+public class OwnAbstractArrayList<E> implements OwnCollection<E> {
 
     /**
      * Default capacity.
@@ -44,7 +44,7 @@ public class OwnAbstractArrayList<E> implements OwnCollectoin<E> {
     }
 
 
-    public void grow(int minCapacity) {
+    private void grow(int minCapacity) {
 
         int oldCapacity = elementData.length;
         int newCapacity = oldCapacity + oldCapacity / 2;
