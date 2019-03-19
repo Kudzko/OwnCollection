@@ -1,5 +1,6 @@
 package by.epam.javawebtraining.kudzko.task02.classes;
 
+import by.epam.javawebtraining.kudzko.task02.classes.exceptions.NoElementsException;
 import by.epam.javawebtraining.kudzko.task02.interfaces.OwnCollection;
 
 import java.util.Collection;
@@ -38,19 +39,29 @@ public class OwnAbstractLinkedList<E> implements OwnCollection<E> {
 
 
     protected E unlinkFirst() {
+
         Node<E> f = first;
-        Node<E> sec = first.next;
-        sec.prev = null;
-        first = sec;
+        Node<E> next = f.next;
+        first = next;
+        E element = f.item;
+        f.item = null;
         f.next = null;
+
+            if (next == last) {
+                last = null;
+            } else {
+                next.prev = null;
+            }
         size--;
-        return f.item;
+        return element;
     }
 
     protected E unlinkLast() {
         Node<E> l = last;
         Node<E> preLast = last.prev;
-        preLast.next = null;
+        if (preLast != null) {
+            preLast.next = null;
+        }
         last = preLast;
         l.prev = null;
         size--;
